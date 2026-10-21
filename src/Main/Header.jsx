@@ -60,18 +60,53 @@ function Header() {
             <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
             <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
             <li><Link to="/products" onClick={() => setMenuOpen(false)}>Products</Link></li>
-            <li>
-              <Link to="/register" onClick={() => setMenuOpen(false)}
-                className="inline-block bg-pink-600 text-white px-5 py-2 rounded-full">
-                Register
-              </Link>
-            </li>
-            <li>
-              <Link to="/login" onClick={() => setMenuOpen(false)}
-                className="inline-block bg-blue-600 text-white px-5 py-2 rounded-full">
-                Login
-              </Link>
-            </li>
+          {
+                    localStorage.getItem('token') ? (
+                      <>
+                        <li>
+                          <Link
+                            to="/cart"
+                            onClick={() => setMenuOpen(false)}
+                            className="inline-block bg-pink-600 text-white px-5 py-2 rounded-full"
+                          >
+                            <RiShoppingCart2Fill />
+                          </Link>
+                        </li>
+
+                        <li>
+                          <Link
+                            to="/User_info"
+                            onClick={() => setMenuOpen(false)}
+                            className="inline-block bg-blue-600 text-white px-5 py-2 rounded-full"
+                          >
+                          <RiUserFill />
+                          </Link>
+                        </li>
+                      </>
+                    ) : (
+                      <>
+                        <li>
+                          <Link
+                            to="/register_new_user"
+                            onClick={() => setMenuOpen(false)}
+                            className="inline-block bg-pink-600 text-white px-5 py-2 rounded-full"
+                          >
+                            Register
+                          </Link>
+                        </li>
+
+                        <li>
+                          <Link
+                            to="/login"
+                            onClick={() => setMenuOpen(false)}
+                            className="inline-block bg-blue-600 text-white px-5 py-2 rounded-full"
+                          >
+                            Login
+                          </Link>
+                        </li>
+                      </>
+                    )
+                  }
           </ul>
         </div>
       )}

@@ -76,7 +76,7 @@ function Login() {
                 type="password"
                 onChange={(e)=>setpassword(e.target.value)}
                 placeholder="Enter your password"
-                minLength={8}
+                // minLength={}
                 required
                 className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-pink-600 focus:ring-2 focus:ring-pink-100"
               />
